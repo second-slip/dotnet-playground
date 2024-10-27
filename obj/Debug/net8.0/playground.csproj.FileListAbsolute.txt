@@ -1,0 +1,14 @@
+C:\Users\Julie Cross\source\repos\playground\bin\Debug\net8.0\playground.exe
+C:\Users\Julie Cross\source\repos\playground\bin\Debug\net8.0\playground.deps.json
+C:\Users\Julie Cross\source\repos\playground\bin\Debug\net8.0\playground.runtimeconfig.json
+C:\Users\Julie Cross\source\repos\playground\bin\Debug\net8.0\playground.dll
+C:\Users\Julie Cross\source\repos\playground\bin\Debug\net8.0\playground.pdb
+C:\Users\Julie Cross\source\repos\playground\obj\Debug\net8.0\playground.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Julie Cross\source\repos\playground\obj\Debug\net8.0\playground.AssemblyInfoInputs.cache
+C:\Users\Julie Cross\source\repos\playground\obj\Debug\net8.0\playground.AssemblyInfo.cs
+C:\Users\Julie Cross\source\repos\playground\obj\Debug\net8.0\playground.csproj.CoreCompileInputs.cache
+C:\Users\Julie Cross\source\repos\playground\obj\Debug\net8.0\playground.dll
+C:\Users\Julie Cross\source\repos\playground\obj\Debug\net8.0\refint\playground.dll
+C:\Users\Julie Cross\source\repos\playground\obj\Debug\net8.0\playground.pdb
+C:\Users\Julie Cross\source\repos\playground\obj\Debug\net8.0\playground.genruntimeconfig.cache
+C:\Users\Julie Cross\source\repos\playground\obj\Debug\net8.0\ref\playground.dll
