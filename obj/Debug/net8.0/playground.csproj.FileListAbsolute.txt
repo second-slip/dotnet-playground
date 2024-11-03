@@ -12,3 +12,4 @@ C:\Users\Julie Cross\source\repos\playground\obj\Debug\net8.0\refint\playground.
 C:\Users\Julie Cross\source\repos\playground\obj\Debug\net8.0\playground.pdb
 C:\Users\Julie Cross\source\repos\playground\obj\Debug\net8.0\playground.genruntimeconfig.cache
 C:\Users\Julie Cross\source\repos\playground\obj\Debug\net8.0\ref\playground.dll
+C:\Users\Julie Cross\source\repos\playground\obj\Debug\net8.0\playground.sourcelink.json

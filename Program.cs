@@ -2,6 +2,67 @@
 using System.Text.RegularExpressions;
 
 
+// (-1, 2) --> 2 (-1 + 0 + 1 + 2 = 2)
+
+// GetSum(0, -1);
+
+int GetSum(int a, int b)
+{
+    if (a == b) return a;
+
+    var range = GenerateSequenceInRange(Math.Min(a, b), Math.Max(a, b));
+
+    return range.Sum();
+}
+
+static IEnumerable<int> GenerateSequenceInRange(int min, int max)
+{
+    while (min <= max)
+    {
+        yield return min++;
+    }
+}
+
+
+// yield return - again
+foreach (int i in ProduceEvenNumbers(9))
+{
+    Console.Write(i);
+    Console.Write(" ");
+    System.Threading.Thread.Sleep(2000);
+}
+// Output: 0 2 4 6 8
+
+IEnumerable<int> ProduceEvenNumbers(int upto)
+{
+    for (int i = 0; i <= upto; i += 2)
+    {
+        // if (i > 4) yield return i;
+        yield return i;
+    }
+}
+
+static IEnumerable<string> OpenOrSenior(int[][] data)
+{
+    var results = data.Select(x => CheckMembershipCategory(x)).ToList();
+
+    //or.............
+
+    // var results = new List<string>();
+
+    // foreach (var item in data)
+    // {
+    //     results.Add(CheckMembershipCategory(item));
+    // }
+
+    return results;
+}
+
+static string CheckMembershipCategory(int[] memberData) => (memberData[0] > 54 & memberData[1] > 7) ? "Senior" : "Open";
+
+
+
+
 // Given a string of words, you need to find the highest scoring word.
 // Each letter of a word scores points according to its position in the alphabet: a = 1, b = 2, c = 3 etc.
 // For example, the score of abad is 8 (1 + 2 + 1 + 4).
@@ -13,7 +74,7 @@ using System.Text.RegularExpressions;
 
 static int Grow(int[] x)
 {
-    var p = x.OrderBy(x => x).Aggregate(1, (accumulator , next) => accumulator  * next);
+    var p = x.OrderBy(x => x).Aggregate(1, (accumulator, next) => accumulator * next);
     return p;
 }
 
@@ -295,7 +356,7 @@ static int Persistence1(long n)
 
 static int[] ToIntArray(long value) => value.ToString().Select(o => Convert.ToInt32(o) - 48).ToArray();
 
-static int CalculateProduct(int[] value) => value.Aggregate(1, (accumulator , next) => accumulator  * next);
+static int CalculateProduct(int[] value) => value.Aggregate(1, (accumulator, next) => accumulator * next);
 
 
 
