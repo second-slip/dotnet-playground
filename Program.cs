@@ -1,5 +1,132 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using System.Text;
 using System.Text.RegularExpressions;
+
+// // HighAndLow yield 
+// static IEnumerable<int> GetNumbers()
+// {
+//     yield return 1; yield return 2; yield return 3;
+// }
+
+// foreach (var number in GetNumbers())
+//     Console.WriteLine(number);
+
+var t = FindEvenIndex(new int[] { 1, 2, 3, 4, 3, 2, 1 });
+
+Console.WriteLine(t);
+
+static int FindEvenIndex(int[] arr)
+{
+    for (int i = 0; i < arr.Length; i++)
+    {
+        var left = arr.Take(i).Sum();
+        var right = arr.Skip(i + 1).Sum(); // sum from the right
+
+        if (left == right) return i;
+    }
+
+    return -1;
+}
+
+
+
+static List<string> Wave(string str)
+{
+    var result = new List<string>();
+
+    for (int index = 0; index < str.Length; index++)
+    {
+        char charAtIndex = str[index];
+        if (char.IsLower(charAtIndex))
+        {
+            string waveString = str.Substring(0, index) + char.ToUpper(charAtIndex) + str.Substring(index + 1);
+            result.Add(waveString);
+        }
+    }
+
+    return result;
+}
+
+
+
+static string HighAndLow(string numbers)
+{
+    var numbersArray = numbers.Split(" ").Select(int.Parse).ToArray();
+
+    return string.Format($"{numbersArray.Max()} {numbersArray.Min()}");
+}
+
+static string DoubleChar(string s)
+{
+    // return string.Join("", s.Select(x => "" + x + x));
+
+    string s1 = "";
+
+    foreach (var item in s)
+    {
+        s1 += item;
+        s1 += item;
+    }
+
+    return s1;
+}
+
+
+ArrayDiff(new int[] { 1, 2, 2 }, new int[] { 1 });
+
+// , Is.EqualTo(new int[] {2, 2}))
+
+static int[] ArrayDiff(int[] a, int[] b)
+{
+
+    var d = a.Where(x => !b.Contains(x)).ToArray();
+
+    // With a hashset, we won't have to iterate over b for every item in a.
+    // Instead, we can check if an item exists in constant time
+    HashSet<int> bSet = new HashSet<int>(b);
+
+    return a.Where(v => !bSet.Contains(v)).ToArray();
+}
+
+// "din"      =>  "((("
+// "recede"   =>  "()()()"
+// "Success"  =>  ")())())"
+// "(( @"     =>  "))((" 
+
+DuplicateEncode("(( @");
+
+// return new string(word.ToLower().Select(ch => word.ToLower().Count(innerCh => ch == innerCh) == 1 ? '(' : ')').ToArray());
+
+static string DuplicateEncode(string word)
+{
+    word = word.ToLower();
+
+    var dupChar = word.GroupBy(c => c)
+                    .Select(x => new
+                    {
+                        Char = x.Key,
+                        Count = x.Count()
+                    })
+                    .Where(x => x.Count > 1)
+                    .Select(x => x.Char);
+
+    string n = "";
+
+    foreach (var item in word)
+    {
+        if (dupChar.Any(c => c == item))
+        {
+            n += ")";
+        }
+        else
+        {
+            n += "(";
+        }
+    }
+
+    return n;
+}
+
 
 
 // (-1, 2) --> 2 (-1 + 0 + 1 + 2 = 2)
